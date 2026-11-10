@@ -1,6 +1,10 @@
-# Inventory Tweaks: Reloaded
+<p align="center">
+  <img src="mod/src/main/resources/icon.png" width="128" alt="Inventory Tweaks: Reloaded">
+</p>
 
-Inventory Tweaks for **Minecraft 26.3 + NeoForge**, rebuilt from the 1.12.2 original.
+<h1 align="center">Inventory Tweaks: Reloaded</h1>
+
+<p align="center">Inventory Tweaks for <b>Minecraft 26.3 + NeoForge</b>, rebuilt from the 1.12.2 original.</p>
 
 The original project is no longer updated. This is a port that keeps the way it
 behaved: the buttons in the corner of every container, the R key, the middle
