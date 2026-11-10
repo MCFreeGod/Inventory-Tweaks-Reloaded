@@ -3,11 +3,21 @@
 The icon is a chest grid with the three classic sorting arrows, drawn on a
 20x20 pixel grid at 1:1 and upscaled with NEAREST so the pixels stay crisp.
 Everything is drawn from vanilla-ish palette values; no external asset is used.
+
+Usage:
+    python make_icon.py [--size 256] [--out icon.png]
+
+The mod jar ships a 256x256 icon. Modrinth asks for 512x512, so generate that
+one with ``--size 512 --out icon-512.png``.
 """
+import argparse
+
 from PIL import Image
 
 CELL = 20          # logical pixel grid
-SCALE = 13         # 20 * 13 = 260, cropped to 256
+# Upscale factor. 13 gives 260px, enough for the 256 crop; anything larger is
+# just cropped further. Overridden in main() when a bigger size is requested.
+SCALE = 13
 OUT = 256
 
 # Vanilla-ish palette
@@ -85,13 +95,22 @@ def draw():
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Generate the mod icon.")
+    parser.add_argument("--size", type=int, default=OUT,
+                        help="output edge length in pixels (default 256)")
+    parser.add_argument("--out", default="icon.png", help="output file name")
+    args = parser.parse_args()
+
+    out = args.size
+    # The grid is 20 cells wide, so the upscale factor has to reach at least
+    # `out` pixels before cropping; round up and crop the remainder evenly.
+    scale = max(1, -(-out // CELL))
     img = draw()
-    big = img.resize((CELL * SCALE, CELL * SCALE), Image.NEAREST)
-    # Crop to 256 with a 2px logical margin preserved on all sides.
-    margin = (CELL * SCALE - OUT) // 2
-    big = big.crop((margin, margin, margin + OUT, margin + OUT))
-    big.save("icon.png")
-    print("wrote icon.png", big.size)
+    big = img.resize((CELL * scale, CELL * scale), Image.NEAREST)
+    margin = (CELL * scale - out) // 2
+    big = big.crop((margin, margin, margin + out, margin + out))
+    big.save(args.out)
+    print(f"wrote {args.out} {big.size[0]}x{big.size[1]} (scale {scale})")
 
 
 if __name__ == "__main__":
