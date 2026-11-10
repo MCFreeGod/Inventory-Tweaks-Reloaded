@@ -1,0 +1,29 @@
+modLoader="javafml"
+loaderVersion="[1,)"
+license="MIT"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="MCFreeGod"
+credits="Port of the original Inventory Tweaks by Marwane Kalam-Alami"
+iconFile="icon.png"
+description='''Restores the classic Inventory Tweaks experience: R-key sorting, the four buttons in the top-right corner of container screens, and automatic tool / stack replacement. Sorting is performed with ordinary container clicks, so it works on vanilla servers and is entirely client-side.'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    # Any NeoForge build for this Minecraft version. A bare version string is
+    # parsed by Maven's VersionRange as an exact pin, which would lock the mod
+    # to one loader build.
+    versionRange="[26.3,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="[26.3]"
+    ordering="NONE"
+    side="BOTH"

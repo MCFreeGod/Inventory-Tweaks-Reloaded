@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        // Plugin markers live on the official NeoForged maven, so it comes
+        // first, followed by the Gradle Plugin Portal.
+        maven {
+            name = 'NeoForged'
+            url = 'https://maven.neoforged.net/releases'
+        }
+        gradlePluginPortal()
+        // Same opt-in mirror as in build.gradle, for plugin resolution.
+        def mirror = providers.gradleProperty('neoforgedMirror').getOrNull()
+        if (mirror) {
+            maven {
+                name = 'NeoForgedMirror'
+                url = mirror
+            }
+        }
+    }
+}
+
+plugins {
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
+}
+
+rootProject.name = 'InventoryTweaksReloaded'

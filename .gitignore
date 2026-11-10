@@ -1,0 +1,40 @@
+# Build output
+build/
+out/
+classes/
+
+# Gradle
+.gradle/
+gradle-app.setting
+!gradle/wrapper/gradle-wrapper.jar
+.gradlew.bat.bak
+
+# Dev run directory: worlds, logs, downloaded assets, generated configs
+run/
+logs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local working copies and reference material that is not part of this
+# project's source and must not be redistributed.
+analysis/
+
+# Release output: the jar and its checksum are attached to GitHub releases,
+# not committed to the repository.
+dist/
+
+# Loose jars anywhere else (the Gradle wrapper jar is the one exception)
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar

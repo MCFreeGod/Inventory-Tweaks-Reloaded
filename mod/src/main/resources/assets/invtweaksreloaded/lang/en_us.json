@@ -1,0 +1,27 @@
+{
+  "invtweaks.button.settings.tooltip": "Inventory settings",
+  "invtweaks.button.chest1.tooltip": "Default sorting",
+  "invtweaks.button.chest2.tooltip": "Sort by columns",
+  "invtweaks.button.chest3.tooltip": "Sort by rows",
+
+  "invtweaks.settings.title": "Inventory Tweaks settings",
+  "invtweaks.settings.on": "ON",
+  "invtweaks.settings.off": "OFF",
+  "invtweaks.settings.exit": "Done",
+
+  "invtweaks.settings.chestbuttons": "Container buttons",
+  "invtweaks.settings.chestbuttons.tooltip": "Show the sorting buttons in the top-right corner of container screens",
+  "invtweaks.settings.middleclick": "Middle click",
+  "invtweaks.settings.middleclick.tooltip": "Sort the section under the cursor with the middle mouse button",
+  "invtweaks.settings.autorefill": "Auto-refill",
+  "invtweaks.settings.autorefill.tooltip": "Replace a broken tool or an empty stack with a matching one from your inventory",
+  "invtweaks.settings.beforebreak": "Refill before break",
+  "invtweaks.settings.beforebreak.tooltip": "Swap a nearly-broken tool for a fresh one before it breaks",
+  "invtweaks.settings.advanced.sounds.tooltip": "Play a click when sorting or auto-refilling",
+  "invtweaks.settings.advanced.autoequip.tooltip": "Equip the best armor when sorting your inventory",
+  "invtweaks.settings.sortdamage": "Damaged tools first",
+  "invtweaks.settings.sortdamage.tooltip": "Sort damaged tools before pristine ones",
+
+  "key.invtweaksreloaded.sort": "Sort inventory",
+  "key.category.invtweaksreloaded.invtweaksreloaded": "Inventory Tweaks: Reloaded"
+}

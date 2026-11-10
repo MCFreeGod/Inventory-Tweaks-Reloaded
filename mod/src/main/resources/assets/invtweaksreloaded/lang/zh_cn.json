@@ -1,0 +1,27 @@
+{
+  "invtweaks.button.settings.tooltip": "物品栏设置",
+  "invtweaks.button.chest1.tooltip": "默认排序方式",
+  "invtweaks.button.chest2.tooltip": "按列整理",
+  "invtweaks.button.chest3.tooltip": "按行整理",
+
+  "invtweaks.settings.title": "物品栏和箱子设置",
+  "invtweaks.settings.on": "开启",
+  "invtweaks.settings.off": "关闭",
+  "invtweaks.settings.exit": "完成",
+
+  "invtweaks.settings.chestbuttons": "箱子按钮",
+  "invtweaks.settings.chestbuttons.tooltip": "在容器界面的右上角显示整理按钮",
+  "invtweaks.settings.middleclick": "鼠标中键",
+  "invtweaks.settings.middleclick.tooltip": "使用鼠标中键来排序整理光标下的区域",
+  "invtweaks.settings.autorefill": "自动装填",
+  "invtweaks.settings.autorefill.tooltip": "自动替换损坏的工具和用尽的堆叠",
+  "invtweaks.settings.beforebreak": "保留式重装",
+  "invtweaks.settings.beforebreak.tooltip": "在工具坏掉前的一瞬间替换它们",
+  "invtweaks.settings.advanced.sounds.tooltip": "在整理或自动装填时播放音效",
+  "invtweaks.settings.advanced.autoequip.tooltip": "整理时自动装备上最好的盔甲",
+  "invtweaks.settings.sortdamage": "受损优先",
+  "invtweaks.settings.sortdamage.tooltip": "整理时把受损的工具排在完好的前面",
+
+  "key.invtweaksreloaded.sort": "整理物品栏",
+  "key.category.invtweaksreloaded.invtweaksreloaded": "Inventory Tweaks: Reloaded"
+}
