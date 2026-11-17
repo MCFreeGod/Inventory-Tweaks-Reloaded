@@ -44,8 +44,12 @@ public final class SortingEngine {
         this.rowSize = rules.rowSize();
         // The cursor stack is parked in the player inventory, never in the
         // container being sorted: sorting a chest must not move the player's
-        // held item into the chest.
-        this.mover = new ClickMover(menu, layout.playerInventory());
+        // held item into the chest. Swaps park their stack inside the region
+        // being sorted, so nothing visibly jumps into the crafting grid; an
+        // inventory sort uses the main inventory only, because the hotbar is
+        // locked and must not be disturbed even for a tick.
+        List<Slot> swapParking = inventorySection ? layout.mainInventory() : slots;
+        this.mover = new ClickMover(menu, layout.playerInventory(), swapParking);
         this.mode = mode;
         this.rules = rules;
         this.inventorySection = inventorySection;

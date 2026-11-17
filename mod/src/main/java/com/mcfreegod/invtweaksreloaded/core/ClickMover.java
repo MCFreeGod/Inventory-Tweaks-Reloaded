@@ -27,16 +27,29 @@ public final class ClickMover {
      * sort can never push the cursor stack into someone else's chest.
      */
     private final List<Slot> putDownTargets;
+    /**
+     * Slots a stack may be parked in for the two clicks a swap needs. Only
+     * slots of the inventory being sorted are offered: scanning the whole menu
+     * would pick the crafting grid, which sits at the very start of the player
+     * inventory menu, and the item would visibly jump into a crafting slot for
+     * a tick.
+     */
+    private final List<Slot> intermediates;
     private int clicks;
 
     public ClickMover(AbstractContainerMenu menu) {
-        this(menu, List.of());
+        this(menu, List.of(), List.of());
     }
 
     public ClickMover(AbstractContainerMenu menu, List<Slot> putDownTargets) {
+        this(menu, putDownTargets, List.of());
+    }
+
+    public ClickMover(AbstractContainerMenu menu, List<Slot> putDownTargets, List<Slot> intermediates) {
         this.mc = Minecraft.getInstance();
         this.menu = menu;
         this.putDownTargets = putDownTargets;
+        this.intermediates = intermediates;
     }
 
     public boolean isUsable() {
@@ -158,8 +171,20 @@ public final class ClickMover {
 
     @Nullable
     private Slot findIntermediate(Slot src, Slot dst, ItemStack srcStack, ItemStack dstStack) {
-        List<Slot> slots = menu.slots;
-        for (Slot slot : slots) {
+        // Prefer the slots actually being sorted: parking a stack in the
+        // crafting grid, the armor slots or the offhand would show the item
+        // there for a tick before it moves on.
+        Slot candidate = findEmptyIntermediate(intermediates, src, dst, srcStack, dstStack);
+        if (candidate != null) {
+            return candidate;
+        }
+        return findEmptyIntermediate(putDownTargets, src, dst, srcStack, dstStack);
+    }
+
+    @Nullable
+    private static Slot findEmptyIntermediate(List<Slot> candidates, Slot src, Slot dst,
+                                              ItemStack srcStack, ItemStack dstStack) {
+        for (Slot slot : candidates) {
             if (slot == src || slot == dst || !slot.isActive() || slot.hasItem()) {
                 continue;
             }

@@ -17,6 +17,8 @@
   "invtweaks.settings.autorefill.tooltip": "Replace a broken tool or an empty stack with a matching one from your inventory",
   "invtweaks.settings.beforebreak": "Refill before break",
   "invtweaks.settings.beforebreak.tooltip": "Swap a nearly-broken tool for a fresh one before it breaks",
+  "invtweaks.settings.sounds": "Click sounds",
+  "invtweaks.settings.autoequip": "Auto-equip armor",
   "invtweaks.settings.advanced.sounds.tooltip": "Play a click when sorting or auto-refilling",
   "invtweaks.settings.advanced.autoequip.tooltip": "Equip the best armor when sorting your inventory",
   "invtweaks.settings.sortdamage": "Damaged tools first",

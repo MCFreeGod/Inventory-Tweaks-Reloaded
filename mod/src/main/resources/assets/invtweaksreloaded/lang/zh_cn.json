@@ -17,6 +17,8 @@
   "invtweaks.settings.autorefill.tooltip": "自动替换损坏的工具和用尽的堆叠",
   "invtweaks.settings.beforebreak": "保留式重装",
   "invtweaks.settings.beforebreak.tooltip": "在工具坏掉前的一瞬间替换它们",
+  "invtweaks.settings.sounds": "点击音效",
+  "invtweaks.settings.autoequip": "自动装备盔甲",
   "invtweaks.settings.advanced.sounds.tooltip": "在整理或自动装填时播放音效",
   "invtweaks.settings.advanced.autoequip.tooltip": "整理时自动装备上最好的盔甲",
   "invtweaks.settings.sortdamage": "受损优先",
